@@ -25,3 +25,9 @@ class Advertisement(models.Model):
         auto_now=True,
         verbose_name='Дата обновления'
     )
+
+    class Meta:
+        db_table = "advertisements"
+
+    def __str__(self):
+        return f"id={id}, title={title}, price={price}"
