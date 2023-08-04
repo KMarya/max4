@@ -26,8 +26,8 @@ class Advertisement(models.Model):
         verbose_name='Дата обновления'
     )
 
+    def __str__(self):
+        return f"Advertisement(id={self.id}, title={self.title}, price={self.price})"
+
     class Meta:
         db_table = "advertisements"
-
-    def __str__(self):
-        return f"id={id}, title={title}, price={price}"
