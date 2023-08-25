@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'app_lesson_4',
+    'app_auth',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media/')
 MEDIA_URL = 'media/'
+
+LOGIN_URL = '/'

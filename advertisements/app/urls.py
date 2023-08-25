@@ -1,10 +1,9 @@
 from django.urls import path, include
 from django.contrib import admin
-from .views import index, go_back, top_sellers, advertisement, advertisement_post, login, profile, register
+from .views import index, top_sellers, advertisement, advertisement_post, login, profile, register
 
 urlpatterns = [
     path('', index, name='index'),
-    path('go back/', go_back),
     path('top_sellers.html', top_sellers, name='top_sellers'),
     path('advertisement.html', advertisement, name='advertisement'),
     path('advertisement-post.html', advertisement_post, name='advertisement-post'),
