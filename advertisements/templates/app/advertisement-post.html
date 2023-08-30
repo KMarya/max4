@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block title %}
 Создать объявление
 {% endblock %}
+
 {% block content %}
 <ul class="nav nav-pills sticky-top bg-white nav-fill">
   <li class="nav-item">
@@ -20,6 +20,7 @@
       <span style="font-weight: bold;">Разместить объявление</span>
     </a>
   </li>
+  {% if not user.is_authenticated %}
   <li class="nav-item">
     <a class="nav-link" href="{% url 'register' %}">
       <span style="font-weight: bold;">Регистрация</span>
@@ -30,16 +31,18 @@
       <span style="font-weight: bold;">Войти</span>
     </a>
   </li>
+  {% else %}
   <li class="nav-item">
     <a class="nav-link" href="{% url 'profile' %}">
       <span style="font-weight: bold;">Профиль</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="{% url 'logout' %}">
       <span style="font-weight: bold;">Выйти</span>
     </a>
   </li>
+  {% endif %}
 </ul>
 <div class="row">
   <div class="col" style="margin: 50px;">

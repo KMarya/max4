@@ -1,9 +1,8 @@
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth import get_user_model
-
-from django.utils import timezone
 from django.utils.html import format_html
+from django.utils import timezone
 
 User = get_user_model()
 
@@ -53,7 +52,6 @@ class Advertisement(models.Model):
     def photo(self):
         if self.image:
             return format_html('<img src="%s" width="50" height="50"/>' % self.image.url)
-
 
     def __str__(self):
         return f"Advertisement(id={self.id}, title={self.title}, price={self.price})"
